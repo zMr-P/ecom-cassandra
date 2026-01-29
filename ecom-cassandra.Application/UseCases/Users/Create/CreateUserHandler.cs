@@ -5,6 +5,8 @@ using Mapster;
 using MediatR;
 using MrP.FluentResult.Artifacts;
 using MrP.FluentResult.FluentExtensions;
+using Hasher = BCrypt.Net.BCrypt;
+
 
 namespace ecom_cassandra.Application.UseCases.Users.Create;
 
@@ -17,6 +19,8 @@ public class CreateUserHandler(IUserRepository repository) : IRequestHandler<Cre
         try
         {
             var userToCreate = request.Adapt<User>();
+            
+            userToCreate.PasswordHash = Hasher.HashPassword(request.Password);
             await _userRepository.CreateAsync(userToCreate, cancellationToken);
             
             return new Result(true)

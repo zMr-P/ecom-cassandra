@@ -17,9 +17,10 @@ public class UsersController(IMediator mediator) : ControllerBase
     [SwaggerOperation("Register a user in the application")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<string>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
-    public async Task<IActionResult> CreateUserAsync([FromBody] CreateUserRequest request)
+    public async Task<IActionResult> CreateUserAsync([FromBody] CreateUserRequest request,
+        CancellationToken cancellationToken)
     {
-        var response = await _mediator.Send(request);
+        var response = await _mediator.Send(request, cancellationToken);
 
         if (!response.IsSuccess)
             return BadRequest(response.ErrorMessages);

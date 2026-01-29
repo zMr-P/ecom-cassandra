@@ -13,6 +13,7 @@ builder.Services
     .SetCassandraConfig(builder.Configuration)
     .SetInversionOfControl()
     .SetMapsterConfig()
+    .SetMediatRConfig()
     .SetVersioningConfig();
 
 var app = builder.Build();
