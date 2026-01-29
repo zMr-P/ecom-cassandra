@@ -7,4 +7,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Repositories\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CassandraCSharpDriver" Version="3.22.0" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ecom-cassandra.Domain\ecom-cassandra.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

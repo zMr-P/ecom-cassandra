@@ -16,4 +16,8 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ecom-cassandra.CrossCutting\ecom-cassandra.CrossCutting.csproj" />
+    </ItemGroup>
+
 </Project>
