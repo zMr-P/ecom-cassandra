@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Repositories\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="CassandraCSharpDriver" Version="3.22.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.2" />
     </ItemGroup>
