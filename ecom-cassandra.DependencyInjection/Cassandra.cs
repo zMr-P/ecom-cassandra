@@ -6,9 +6,9 @@ using ecom_cassandra.Infrastructure.Session;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ecom_cassandra.CrossCutting.DependencyInjection;
+namespace ecom_cassandra.DependencyInjection;
 
-public static class CassandraDp
+public static class Cassandra
 {
     public static IServiceCollection SetCassandraConfig(this IServiceCollection services, IConfiguration config)
     {

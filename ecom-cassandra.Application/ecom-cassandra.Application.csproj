@@ -7,4 +7,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Mapster" Version="10.0.0-pre01" />
+      <PackageReference Include="MediatR" Version="13.0.0" />
+      <PackageReference Include="MrP.FluentResult" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ecom-cassandra.CrossCutting\ecom-cassandra.CrossCutting.csproj" />
+      <ProjectReference Include="..\ecom-cassandra.Domain\ecom-cassandra.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

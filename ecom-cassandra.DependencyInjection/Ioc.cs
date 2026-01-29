@@ -2,7 +2,7 @@
 using ecom_cassandra.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ecom_cassandra.CrossCutting.DependencyInjection;
+namespace ecom_cassandra.DependencyInjection;
 
 public static class Ioc
 {

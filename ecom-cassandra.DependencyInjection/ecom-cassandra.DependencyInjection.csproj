@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>ecom_cassandra.DependencyInjection</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Asp.Versioning.Http" Version="8.1.1" />
+      <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.2" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.2" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ecom-cassandra.Application\ecom-cassandra.Application.csproj" />
+      <ProjectReference Include="..\ecom-cassandra.Infrastructure\ecom-cassandra.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

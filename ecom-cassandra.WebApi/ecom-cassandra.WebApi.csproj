@@ -9,15 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ecom-cassandra.CrossCutting\ecom-cassandra.CrossCutting.csproj" />
+      <ProjectReference Include="..\ecom-cassandra.DependencyInjection\ecom-cassandra.DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>
