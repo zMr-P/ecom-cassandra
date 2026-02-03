@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.DependencyInjection", "ecom-cassandra.DependencyInjection\ecom-cassandra.DependencyInjection.csproj", "{2539861D-1DA8-4F29-8F93-4DDDB3449287}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.MigrationJob", "ecom-cassandra.MigrationJob\ecom-cassandra.MigrationJob.csproj", "{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{2539861D-1DA8-4F29-8F93-4DDDB3449287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2539861D-1DA8-4F29-8F93-4DDDB3449287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2539861D-1DA8-4F29-8F93-4DDDB3449287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

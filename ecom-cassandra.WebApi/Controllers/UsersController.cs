@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using ecom_cassandra.Application.UseCases.Users.Create;
+using ecom_cassandra.Application.UseCases.Users.GetAll;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -26,5 +27,19 @@ public class UsersController(IMediator mediator) : ControllerBase
             return BadRequest(response.ErrorMessages);
 
         return Ok(response.Messages);
+    }
+
+    [HttpGet("get-all")]
+    [SwaggerOperation("Read all users of the application")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<GetAllUserResponse>))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
+    public async Task<IActionResult> GetAllUsersAsync(CancellationToken cancellationToken)
+    {
+        var response = await _mediator.Send(new GetAllUserRequest(), cancellationToken);
+
+        if (!response.IsSuccess)
+            return BadRequest(response.ErrorMessages);
+
+        return Ok(response.Value);
     }
 }

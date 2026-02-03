@@ -1,12 +1,11 @@
-﻿namespace ecom_cassandra.Domain.Entities;
+﻿namespace ecom_cassandra.Application.UseCases.Users.GetAll;
 
-public class User
+public class GetAllUserResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public string PasswordHash { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
-    public List<Address>? Addresses { get; set; }
+    public List<GetAllUserAddressResponse>? Addresses { get; set; }
 }

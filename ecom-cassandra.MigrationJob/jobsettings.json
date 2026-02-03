@@ -1,0 +1,11 @@
+﻿{
+  "ExternalServices": {
+    "Cassandra": {
+      "Username": "your_username",
+      "Password": "your_password",
+      "Host": "cassandra_host",
+      "Port": 9042,
+      "Keyspace": "your_keyspace"
+    }
+  }
+}

@@ -26,6 +26,7 @@ public static class Cassandra
         {
             var session = sp.GetRequiredService<ISession>();
             var mappingConfig = CassandraMapping.GetMappings();
+            CassandraMappingUdts.RegisterUdts(session);
             return new Mapper(session, mappingConfig);
         });
 

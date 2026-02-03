@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>ecom_cassandra.MigrationJob</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>1f8a4447-5829-41ce-9313-3a8ed2738717</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="jobsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <ProjectReference Include="..\ecom-cassandra.DependencyInjection\ecom-cassandra.DependencyInjection.csproj"/>
+        <ProjectReference Include="..\ecom-cassandra.Infrastructure\ecom-cassandra.Infrastructure.csproj"/>
+    </ItemGroup>
+
+</Project>
