@@ -12,7 +12,7 @@ public class CreateUserAndAddrress20260202(ISession session) : IMigrator
 
     public async Task ApplyMigrationAsync()
     {
-        // Create the UDT address
+        // Create the UDT Address
         const string createAddressTypeCql = @"
             CREATE TYPE IF NOT EXISTS address (
                 id uuid,
@@ -25,7 +25,7 @@ public class CreateUserAndAddrress20260202(ISession session) : IMigrator
             );";
         await _session.ExecuteAsync(new SimpleStatement(createAddressTypeCql));
 
-        // Create Users table with Address UDT
+        // Create table Users with UDT address
         const string createUserTableCql = @"
             CREATE TABLE IF NOT EXISTS users (
                 id uuid PRIMARY KEY,
