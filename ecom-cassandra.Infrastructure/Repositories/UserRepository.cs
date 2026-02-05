@@ -29,7 +29,7 @@ public class UserRepository(IMapper sessionMapper) : IUserRepository
         await _sessionMapper.DeleteAsync(user);
     }
 
-    public async Task<User> GetByIdAsync(int id, CancellationToken ct)
+    public async Task<User?> GetByIdAsync(Guid id, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested();
 
