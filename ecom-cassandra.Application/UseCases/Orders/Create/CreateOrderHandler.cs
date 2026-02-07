@@ -1,4 +1,5 @@
-﻿using ecom_cassandra.Domain.Entities;
+﻿using ecom_cassandra.CrossCutting.Constants;
+using ecom_cassandra.Domain.Entities;
 using ecom_cassandra.Domain.Interfaces;
 using ecom_cassandra.Domain.Interfaces.Repositories;
 using Mapster;
@@ -41,7 +42,7 @@ public class CreateOrderHandler(
             await _operationBatch.CommitAsync(cancellationToken);
 
             return new Result(true)
-                .AddMessage("Order created successfully.");
+                .AddMessage(SuccessMessage.Created);
         }
         catch (Exception ex)
         {
