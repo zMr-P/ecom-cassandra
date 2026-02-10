@@ -8,7 +8,7 @@ namespace ecom_cassandra.Infrastructure.Repositories;
 public class OrderItemRepository(IMapper sessionMapper) : IOrderItemRepository
 {
     private readonly IMapper _sessionMapper = sessionMapper;
-    
+
     public Task<string> CreateBatchQueryAsync(List<OrderItem> orderItems, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested();
@@ -24,5 +24,15 @@ public class OrderItemRepository(IMapper sessionMapper) : IOrderItemRepository
         }
 
         return Task.FromResult(cqlQuery.ToString());
+    }
+
+    public async Task<List<OrderItem>> GetByOrderIdAsync(Guid orderId, CancellationToken ct)
+    {
+        ct.ThrowIfCancellationRequested();
+        
+        var orderItems = await _sessionMapper.FetchAsync<OrderItem>(
+            $"SELECT * FROM order_items WHERE order_id = {orderId}"
+        );
+        return orderItems.ToList();
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Asp.Versioning;
 using ecom_cassandra.Application.UseCases.Orders.Create;
 using ecom_cassandra.Application.UseCases.Orders.GetAll;
-using ecom_cassandra.Application.UseCases.Products.Create;
-using ecom_cassandra.Application.UseCases.Products.GetAll;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -35,7 +33,7 @@ public class OrdersController(IMediator mediator) : ControllerBase
     [SwaggerOperation("Read all orders of the application")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<GetAllOrdersResponse>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
-    public async Task<IActionResult> GetAllUsersAsync(CancellationToken cancellationToken)
+    public async Task<IActionResult> GetAllOrdersAsync(CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(new GetAllOrdersRequest(), cancellationToken);
     
