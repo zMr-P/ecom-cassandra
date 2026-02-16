@@ -2,6 +2,7 @@
 using ecom_cassandra.Application.UseCases.Products.Create;
 using ecom_cassandra.Application.UseCases.Products.GetAll;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -15,6 +16,7 @@ public class ProductsController(IMediator mediator) : ControllerBase
     private readonly IMediator _mediator = mediator;
     
     [HttpPost("create")]
+    [Authorize(Roles = "Operator, Admin")]
     [SwaggerOperation("Register a Product in the application")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<string>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]

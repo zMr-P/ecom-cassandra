@@ -2,7 +2,8 @@
 
 public enum UserRoles : int
 {
-    Guest = 0,
-    Customer = 1,
-    Admin = 2
+    Admin = 0,
+    Guest = 1,
+    Customer = 2,
+    Operator = 3,
 }

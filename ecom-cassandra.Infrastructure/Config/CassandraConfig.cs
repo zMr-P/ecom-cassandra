@@ -2,9 +2,9 @@
 
 public class CassandraConfig
 {
-    public required string UserName { get; set; }
-    public required string Password { get; set; }
-    public required string Host { get; set; }
-    public required int Port { get; set; }
-    public required string KeySpace { get; set; }
+    public string UserName { get; init; } = string.Empty;   
+    public string Password { get; init; } = string.Empty;
+    public string Host { get; init; } = string.Empty;
+    public int Port { get; init; }
+    public string KeySpace { get; set; } = string.Empty;
 }

@@ -15,7 +15,7 @@ public class AddColumnRolesOnUser20260203(ISession session) : IMigrator
     {
         const string addRolesColumnCql = @"
             ALTER TABLE users 
-            ADD roles set<text>;";
+            ADD role text;";
         
         await _session.ExecuteAsync(new SimpleStatement(addRolesColumnCql));
     }

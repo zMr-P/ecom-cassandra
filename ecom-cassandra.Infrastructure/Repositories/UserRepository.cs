@@ -36,6 +36,13 @@ public class UserRepository(IMapper sessionMapper) : IUserRepository
         return await _sessionMapper.FirstOrDefaultAsync<User>("WHERE id = ?", id);
     }
 
+    public async Task<User?> GetByEmailAsync(string email, CancellationToken ct)
+    {
+        ct.ThrowIfCancellationRequested();
+
+        return await _sessionMapper.FirstOrDefaultAsync<User>("WHERE email = ?", email);
+    }
+
     public async Task<List<User>> GetAllAsync(CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested();

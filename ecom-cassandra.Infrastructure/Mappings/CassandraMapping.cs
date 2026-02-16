@@ -17,6 +17,7 @@ public static class CassandraMapping
                 .Column(u => u.Name, cm => cm.WithName("name"))
                 .Column(u => u.Email, cm => cm.WithName("email"))
                 .Column(u => u.PasswordHash, cm => cm.WithName("password_hash"))
+                .Column(u => u.Role, cm => cm.WithName("role"))
                 .Column(u => u.CreatedAt, cm => cm.WithName("created_at"))
                 .Column(u => u.UpdatedAt, cm => cm.WithName("updated_at"))
                 .Column(u => u.Addresses, cm => cm.WithName("addresses"))

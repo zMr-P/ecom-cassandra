@@ -3,6 +3,7 @@ using ecom_cassandra.Application.UseCases.Categories.Create;
 using ecom_cassandra.Application.UseCases.Categories.GetAll;
 using ecom_cassandra.Application.UseCases.Products.GetAll;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -16,6 +17,7 @@ public class CategoriesController(IMediator mediator) : ControllerBase
     private readonly IMediator _mediator = mediator;
 
     [HttpPost("create")]
+    [Authorize(Roles =  "Operator, Admin")]
     [SwaggerOperation("Register category in the application")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<string>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
@@ -32,6 +34,7 @@ public class CategoriesController(IMediator mediator) : ControllerBase
 
     [HttpGet("get-all")]
     [SwaggerOperation("Read all categories of the application")]
+    [Authorize(Roles = "Customer, Operator, Admin")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<GetAllProductsResponse>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
     public async Task<IActionResult> GetAllCategoriesAsync(CancellationToken cancellationToken)

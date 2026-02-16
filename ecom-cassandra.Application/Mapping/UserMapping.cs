@@ -1,7 +1,7 @@
 ﻿using ecom_cassandra.Application.UseCases.Users.Create;
 using ecom_cassandra.Domain.Entities;
+using ecom_cassandra.Domain.Enums;
 using Mapster;
-using Hasher = BCrypt.Net.BCrypt;
 
 namespace ecom_cassandra.Application.Mapping;
 
@@ -13,7 +13,7 @@ public class UserMapping : IRegister
             .Map(dest => dest.Id, src => Guid.NewGuid())
             .Map(dest => dest.Name, src => src.Name)
             .Map(dest => dest.Email, src => src.Email)
-            .Map(dest => dest.PasswordHash, src => Hasher.HashPassword(src.Password))
+            .Map(dest => dest.Role, src => nameof(UserRoles.Customer))
             .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
             .Map(dest => dest.Addresses, src => src.Addresses);
 

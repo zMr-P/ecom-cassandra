@@ -17,6 +17,7 @@ builder.Services.AddRouting(options =>
 builder.Services
     .SetSwaggerConfig()
     .SetCassandraConfig(builder.Configuration)
+    .SetJwtConfig(builder.Configuration)
     .SetInversionOfControl()
     .SetMapsterConfig()
     .SetMediatRConfig()
@@ -33,6 +34,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

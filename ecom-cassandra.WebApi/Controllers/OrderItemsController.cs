@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using ecom_cassandra.Application.UseCases.OrderItems.GetByOrder;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -15,6 +16,7 @@ public class OrderITemsController(IMediator mediator) : ControllerBase
 
     [HttpGet("get-by-order-id/{orderId:guid}")]
     [SwaggerOperation("Read order items by order id")]
+    [Authorize(Roles = "Customer, Operator, Admin")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetByOrderResponse))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
     public async Task<IActionResult> GetItemsByOrderAsync([FromRoute] Guid orderId, CancellationToken cancellationToken)

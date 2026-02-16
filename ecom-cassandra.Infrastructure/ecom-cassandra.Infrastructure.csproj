@@ -8,8 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
       <PackageReference Include="Cassandra.Fluent.Migrator" Version="1.0.4" />
       <PackageReference Include="CassandraCSharpDriver" Version="3.22.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.24" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.2" />
       <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.2" />
     </ItemGroup>
