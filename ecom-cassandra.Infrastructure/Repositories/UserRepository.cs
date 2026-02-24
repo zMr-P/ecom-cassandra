@@ -29,6 +29,13 @@ public class UserRepository(IMapper sessionMapper) : IUserRepository
         await _sessionMapper.DeleteAsync(user);
     }
 
+    public Task UpdateRoleAsync(Guid id, string role, CancellationToken ct)
+    {
+        ct.ThrowIfCancellationRequested();
+
+        return _sessionMapper.UpdateAsync<User>("SET role = ? WHERE id = ?", role, id);
+    }
+
     public async Task<User?> GetByIdAsync(Guid id, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested();
@@ -50,4 +57,6 @@ public class UserRepository(IMapper sessionMapper) : IUserRepository
         var users = await _sessionMapper.FetchAsync<User>("SELECT * FROM users");
         return users.ToList();
     }
+    
+    
 }

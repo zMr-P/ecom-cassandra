@@ -19,6 +19,10 @@ public class GetAllProductsHandler(IProductRepository productRepository)
             var products = await _productRepository.GetAllProducts(cancellationToken);
 
             var response = products.Adapt<List<GetAllProductsResponse>>();
+            
+            if(response.Count == 0)
+                return new Result<List<GetAllProductsResponse>>(false)
+                    .AddErrorMessage("No products found");
 
             return new Result<List<GetAllProductsResponse>>(response, true);
         }

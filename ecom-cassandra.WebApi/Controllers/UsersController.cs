@@ -2,6 +2,7 @@
 using ecom_cassandra.Application.UseCases.Users.Create;
 using ecom_cassandra.Application.UseCases.Users.GetAll;
 using ecom_cassandra.Application.UseCases.Users.Login;
+using ecom_cassandra.Application.UseCases.Users.UpdateRole;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -44,6 +45,22 @@ public class UsersController(IMediator mediator) : ControllerBase
             return BadRequest(response.ErrorMessages);
 
         return Ok(response.Value);
+    }
+
+    [HttpPatch("update-role")]
+    [SwaggerOperation("Update the role of a user to change the permissions of the user in the application")]
+    [Authorize(Roles = "Admin")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<string>))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<string>))]
+    public async Task<IActionResult> UpdateUserRoleAsync([FromBody] UpdateRoleRequest request,
+        CancellationToken cancellationToken)
+    {
+        var response = await _mediator.Send(request, cancellationToken);
+
+        if (!response.IsSuccess)
+            return BadRequest(response.ErrorMessages);
+
+        return Ok(response.Messages);
     }
 
     [HttpPost("login")]
