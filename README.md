@@ -2,22 +2,26 @@
 
 Uma API RESTful moderna construída com **.NET 8** e **Apache Cassandra** para um sistema de e-commerce escalável e robusto. Este projeto implementa padrões de arquitetura limpa com CQRS (Command Query Responsibility Segregation) utilizando MediatR.
 
+## 🌍 Documentação
+
+- [Português](README.md)
+- [English](README_EN.md)
+
 ## 📋 Índice
 
-- [Visão Geral](#visão-geral)
-- [Stack Tecnológico](#stack-tecnológico)
-- [Arquitetura](#arquitetura)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Entidades do Domínio](#entidades-do-domínio)
-- [Primeiros Passos](#primeiros-passos)
-- [Instalação e Configuração](#instalação-e-configuração)
-- [Rodando o Projeto](#rodando-o-projeto)
-- [Endpoints da API](#endpoints-da-api)
-- [Autenticação e Autorização](#autenticação-e-autorização)
-- [Migrations](#migrations)
-- [Estrutura de Pastas](#estrutura-de-pastas)
-- [Padrões de Design](#padrões-de-design)
-- [Contribuindo](#contribuindo)
+- [Visão Geral](#-visão-geral)
+- [Stack Tecnológico](#-stack-tecnológico)
+- [Arquitetura](#-arquitetura)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Entidades do Domínio](#-entidades-do-domínio)
+- [Primeiros Passos](#-primeiros-passos)
+- [Instalação e Configuração](#-instalação-e-configuração)
+- [Rodando o Projeto](#-rodando-o-projeto)
+- [Endpoints da API](#-endpoints-da-api)
+- [Autenticação e Autorização](#-autenticação-e-autorização)
+- [Migrations](#-migrations)
+- [Estrutura de Pastas](#-estrutura-de-pastas)
+- [Padrões de Design](#-padrões-de-design)
 
 ---
 

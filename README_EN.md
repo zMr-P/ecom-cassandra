@@ -2,21 +2,26 @@
 
 A modern RESTful API built with **.NET 8** and **Apache Cassandra** for a scalable and robust e-commerce system. This project implements clean architecture patterns with CQRS (Command Query Responsibility Segregation) using MediatR.
 
+## 🌍 Documentation
+
+- [Portuguese](README.md)
+- [English](README_EN.md)
+
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Technology Stack](#technology-stack)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Domain Entities](#domain-entities)
-- [Getting Started](#getting-started)
-- [Installation and Configuration](#installation-and-configuration)
-- [Running the Project](#running-the-project)
-- [API Endpoints](#api-endpoints)
-- [Authentication and Authorization](#authentication-and-authorization)
-- [Migrations](#migrations)
-- [Folder Structure](#folder-structure)
-- [Design Patterns](#design-patterns)
+- [Overview](#-overview)
+- [Technology Stack](#-technology-stack)
+- [Architecture](#-architecture)
+- [Project Structure](#-project-structure)
+- [Domain Entities](#-domain-entities)
+- [Getting Started](#-getting-started)
+- [Installation and Configuration](#-installation-and-configuration)
+- [Running the Project](#-running-the-project)
+- [API Endpoints](#-api-endpoints)
+- [Authentication and Authorization](#-authentication-and-authorization)
+- [Migrations](#-migrations)
+- [Folder Structure](#-folder-structure)
+- [Design Patterns](#-design-patterns)
 
 ---
 
