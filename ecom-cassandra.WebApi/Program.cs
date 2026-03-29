@@ -18,6 +18,7 @@ builder.Services
     .SetSwaggerConfig()
     .SetCassandraConfig(builder.Configuration)
     .SetJwtConfig(builder.Configuration)
+    .SetRabbitMqConfig(builder.Configuration)
     .SetInversionOfControl()
     .SetMapsterConfig()
     .SetMediatRConfig()

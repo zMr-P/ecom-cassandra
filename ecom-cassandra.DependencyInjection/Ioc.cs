@@ -1,7 +1,9 @@
 ﻿using ecom_cassandra.Domain.Interfaces;
+using ecom_cassandra.Domain.Interfaces.Events;
 using ecom_cassandra.Domain.Interfaces.Repositories;
 using ecom_cassandra.Domain.Interfaces.Security;
 using ecom_cassandra.Infrastructure;
+using ecom_cassandra.Infrastructure.EventsPublisher;
 using ecom_cassandra.Infrastructure.Repositories;
 using ecom_cassandra.Infrastructure.Security;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +29,10 @@ public static class Ioc
         #region Security
         services.AddSingleton<IHashSecurity, HashSecurity>();
         services.AddSingleton<IJwtSecurity, JwtSecurity>();
+        #endregion
+        
+        #region EventsPublisher
+        services.AddScoped<IOrderEventPublisher, OrderEventPublisher>();
         #endregion
         
         return services;

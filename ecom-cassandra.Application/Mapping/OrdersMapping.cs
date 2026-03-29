@@ -1,6 +1,7 @@
 ﻿using ecom_cassandra.Application.UseCases.Orders.Create;
 using ecom_cassandra.Domain.Entities;
 using ecom_cassandra.Domain.Enums;
+using ecom_cassandra.Domain.Events;
 using Mapster;
 
 namespace ecom_cassandra.Application.Mapping;
@@ -30,5 +31,11 @@ public class OrdersMapping : IRegister
             .Map(dest => dest.ProductId, src => src.ProductId)
             .Map(dest => dest.Quantity, src => src.Quantity)
             .Map(dest => dest.UnitPrice, src => src.UnitPrice);
+
+        config.NewConfig<Order, OrderCreated>()
+            .Map(dest => dest.OrderId, src => src.Id)
+            .Map(dest => dest.UserId, src => src.UserId)
+            .Map(dest => dest.TotalAmount, src => src.TotalAmount)
+            .Map(dest => dest.CreatedAt, src => src.CreatedAt);
     }
 }

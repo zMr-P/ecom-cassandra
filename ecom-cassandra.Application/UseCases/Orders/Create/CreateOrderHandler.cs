@@ -1,6 +1,8 @@
 ﻿using ecom_cassandra.CrossCutting.Constants;
 using ecom_cassandra.Domain.Entities;
+using ecom_cassandra.Domain.Events;
 using ecom_cassandra.Domain.Interfaces;
+using ecom_cassandra.Domain.Interfaces.Events;
 using ecom_cassandra.Domain.Interfaces.Repositories;
 using Mapster;
 using MediatR;
@@ -13,13 +15,15 @@ public class CreateOrderHandler(
     IUserRepository userRepository,
     IOrderRepository orderRepository,
     IOrderItemRepository orderItemRepository,
-    IOperationBatch operationBatch)
+    IOperationBatch operationBatch,
+    IOrderEventPublisher orderEventPublisher)
     : IRequestHandler<CreateOrderRequest, Result>
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IOrderRepository _orderRepository = orderRepository;
     private readonly IOrderItemRepository _orderItemRepository = orderItemRepository;
     private readonly IOperationBatch _operationBatch = operationBatch;
+    private readonly IOrderEventPublisher _orderEventPublisher = orderEventPublisher;
 
     public async Task<Result> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
     {
@@ -40,6 +44,9 @@ public class CreateOrderHandler(
             await _operationBatch.AppendAsync(orderQuery, orderItemsQuery);
 
             await _operationBatch.CommitAsync(cancellationToken);
+
+            var orderEvent = order.Adapt<OrderCreated>();
+            await _orderEventPublisher.Publish(orderEvent, cancellationToken);
 
             return new Result(true)
                 .AddMessage(SuccessMessage.Created);
