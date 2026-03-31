@@ -13,8 +13,8 @@
         <None Update="jobsettings.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <ProjectReference Include="..\ecom-cassandra.DependencyInjection\ecom-cassandra.DependencyInjection.csproj"/>
-        <ProjectReference Include="..\ecom-cassandra.Infrastructure\ecom-cassandra.Infrastructure.csproj"/>
+        <ProjectReference Include="..\DependencyInjection\DependencyInjection.csproj" />
+        <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

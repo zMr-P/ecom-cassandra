@@ -18,8 +18,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ecom-cassandra.Application\ecom-cassandra.Application.csproj" />
-      <ProjectReference Include="..\ecom-cassandra.Infrastructure\ecom-cassandra.Infrastructure.csproj" />
+      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

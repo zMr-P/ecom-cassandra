@@ -1,18 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.WebApi", "ecom-cassandra.WebApi\ecom-cassandra.WebApi.csproj", "{A9BD9FA9-AB2D-455C-98CF-93E09128329E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{A9BD9FA9-AB2D-455C-98CF-93E09128329E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.Infrastructure", "ecom-cassandra.Infrastructure\ecom-cassandra.Infrastructure.csproj", "{788969A2-118B-40B6-BC7A-1C14AED00296}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{788969A2-118B-40B6-BC7A-1C14AED00296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.Domain", "ecom-cassandra.Domain\ecom-cassandra.Domain.csproj", "{67154387-E8C8-46F4-8149-72C075845868}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{67154387-E8C8-46F4-8149-72C075845868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.CrossCutting", "ecom-cassandra.CrossCutting\ecom-cassandra.CrossCutting.csproj", "{0BCA7785-178B-42B6-83B7-0BD4000E6368}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting", "CrossCutting\CrossCutting.csproj", "{0BCA7785-178B-42B6-83B7-0BD4000E6368}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.Application", "ecom-cassandra.Application\ecom-cassandra.Application.csproj", "{FC75C4BC-5261-4644-A8D2-4C73FAA30E5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{FC75C4BC-5261-4644-A8D2-4C73FAA30E5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.DependencyInjection", "ecom-cassandra.DependencyInjection\ecom-cassandra.DependencyInjection.csproj", "{2539861D-1DA8-4F29-8F93-4DDDB3449287}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{2539861D-1DA8-4F29-8F93-4DDDB3449287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom-cassandra.MigrationJob", "ecom-cassandra.MigrationJob\ecom-cassandra.MigrationJob.csproj", "{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationJob", "MigrationJob\MigrationJob.csproj", "{DD7E6182-04D1-4BD1-8314-AFA9C47BA9AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

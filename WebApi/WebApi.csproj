@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ecom-cassandra.DependencyInjection\ecom-cassandra.DependencyInjection.csproj" />
+      <ProjectReference Include="..\DependencyInjection\DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>
